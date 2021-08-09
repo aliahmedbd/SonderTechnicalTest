@@ -8,8 +8,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
-import androidx.fragment.app.Fragment
-
+import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
@@ -18,15 +17,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 import com.aliahmed.sondertechnicaltest.R
 import com.aliahmed.sondertechnicaltest.databinding.FragmentMapsBinding
-import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.*
-
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
 
@@ -41,6 +40,8 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     private var googleMap: GoogleMap? = null
     var source: LatLng? = LatLng(0.0, 0.0)
     private lateinit var mapFragment: SupportMapFragment
+    var selectedMarker: Marker? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,9 +50,15 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     ): View? {
         _binding = FragmentMapsBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
+        initialize()
         clickListener()
         return root
+    }
+
+    private fun initialize() {
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
+        binding.txtGetDirection.visibility = View.GONE
+        getLastLocation()
     }
 
     private fun clickListener() {
@@ -168,6 +175,19 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         googleMap?.animateCamera(CameraUpdateFactory.newLatLng(source!!))
         googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(source!!, 15f))
         googleMap?.addMarker(markerOptions)
+
+        googleMap?.setOnMapLongClickListener { latLng ->
+            if (selectedMarker == null) {
+                selectedMarker = googleMap!!.addMarker(
+                    MarkerOptions()
+                        .position(latLng)
+                        .title("Selected Marker")
+                )
+            } else {
+                selectedMarker!!.position = latLng
+            }
+            binding.txtGetDirection.visibility = View.VISIBLE
+        }
     }
 
 
