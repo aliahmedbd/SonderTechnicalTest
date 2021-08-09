@@ -15,7 +15,6 @@
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintic_map_permission.xmlHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_map_permission" />
 
@@ -24,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:textColor="@color/black"
         android:text="@string/access_location"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/divider"
