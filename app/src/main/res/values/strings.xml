@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SonderTechnicalTest</string>
+    <string name="feature_1">Map</string>
+    <string name="feature_2">Passenger</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map">Map</string>
+    <string name="passenger_list">Passenger List</string>
+    <string name="access_location">Access Location</string>
+    <string name="sonder_technical_test_application_required_the_location_permission_to_collect_the_current_location_information_and_prepare_the_map">Sonder Technical Test application required the Location permission to collect the Current location information and Prepare the MAP</string>
 </resources>
