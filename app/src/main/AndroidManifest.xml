@@ -15,8 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SonderTechnicalTest">
-        <activity android:name=".view.PassengerDetailsActivity"></activity>
-        <activity android:name=".view.LocationPermissionActivity" />
+        <activity android:name=".view.PassengerDetailsActivity"
+            android:label="Passenger Details"/>
+        <activity android:name=".view.LocationPermissionActivity"
+            android:label="Access Permission"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -38,7 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivity"
+            android:label="Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

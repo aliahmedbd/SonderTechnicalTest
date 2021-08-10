@@ -29,6 +29,14 @@ class PassengerDetailsActivity : AppCompatActivity() {
         binding.txtFlightName.text = passenger.airline[0].name
         binding.txtPassengerName.text ="Passenger: ${passenger.name}"
         binding.txtTrips.text ="Trips: ${passenger.trips}"
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
 
 }

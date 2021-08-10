@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">SonderTechnicalTest</string>
+    <string name="app_name">Sonder Technical Test</string>
     <string name="feature_1">Map</string>
     <string name="feature_2">Passenger</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map">Map</string>
     <string name="passenger_list">Passenger List</string>

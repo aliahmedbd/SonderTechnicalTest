@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         setBottomNavigationBar()
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setBottomNavigationBar() {
@@ -36,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         )
 
         navView.setupWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onBackPressed() {
