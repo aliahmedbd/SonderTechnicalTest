@@ -63,12 +63,18 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         return root
     }
 
+    /**
+     * Initialize the view element and the Fused Location client
+     */
     private fun initialize() {
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
         binding.txtGetDirection.visibility = View.GONE
         getLastLocation()
     }
 
+    /**
+     * Perform the click listener
+     */
     private fun clickListener() {
         binding.imgCurrentLocation.setOnClickListener {
             getLastLocation()
@@ -84,6 +90,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         mapFragment = (childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?)!!
     }
 
+    /**
+     * Fetch the current location from last known location data, if data are available the collect
+     * the latitude and longitude to set the current location in the MAP
+     */
     @SuppressLint("MissingPermission")
     private fun getLastLocation() {
         if (checkPermissions()) {
@@ -113,6 +123,10 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    /**
+     * When the last known location failed to fetched the data then need to request for the new
+     * location
+     */
     @SuppressLint("MissingPermission")
     private fun requestNewLocationData() {
         var mLocationRequest = LocationRequest()

@@ -26,17 +26,19 @@ class MainActivity : AppCompatActivity() {
         actionbar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    /**
+     * Set bottom navigation with Nav controller as well the menu item also tagged with the
+     * navigation
+     */
     private fun setBottomNavigationBar() {
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_map,
                 R.id.navigation_passenger_list
             )
         )
-
         navView.setupWithNavController(navController)
     }
 
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         showDialog()
     }
 
+    /** Show an exit dialog to user confirmation */
     private fun showDialog() {
         val myQuittingDialogBox: AlertDialog = AlertDialog.Builder(this)
             .setTitle("Exit")
