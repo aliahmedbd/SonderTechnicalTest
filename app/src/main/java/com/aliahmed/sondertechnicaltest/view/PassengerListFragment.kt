@@ -17,9 +17,11 @@ import com.aliahmed.sondertechnicaltest.databinding.FragmentMapsBinding
 import com.aliahmed.sondertechnicaltest.databinding.FragmentPassangerListBinding
 import com.aliahmed.sondertechnicaltest.model.Passenger
 import com.aliahmed.sondertechnicaltest.network.APIInterface
+import com.aliahmed.sondertechnicaltest.utils.ConstantValue
 import com.aliahmed.sondertechnicaltest.utils.ItemClickListener
 import com.aliahmed.sondertechnicaltest.viewmodel.PassengersViewModel
 import com.aliahmed.sondertechnicaltest.viewmodel.PassengersViewModelFactory
+import com.google.gson.Gson
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -63,13 +65,10 @@ class PassengerListFragment : Fragment(), ItemClickListener {
         }
     }
 
-    override fun itemClick(position: Int) {
-
-    }
-
     override fun itemClick(position: Passenger) {
-        Toast.makeText(context, position.name, Toast.LENGTH_LONG).show()
-      //  val intent = Intent()
+        val intent = Intent(context, PassengerDetailsActivity::class.java)
+        intent.putExtra(ConstantValue.passengerData, Gson().toJson(position))
+        startActivity(intent)
     }
 
 }

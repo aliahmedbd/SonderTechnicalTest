@@ -1,18 +1,13 @@
 package com.aliahmed.sondertechnicaltest.repository
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.aliahmed.sondertechnicaltest.model.Passenger
-import com.aliahmed.sondertechnicaltest.model.PassengerBaseResponse
 import com.aliahmed.sondertechnicaltest.network.APIInterface
-import com.aliahmed.sondertechnicaltest.network.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import retrofit2.HttpException
+import java.io.IOException
 
-class PassengerListRepository( private val api: APIInterface):  PagingSource<Int, Passenger>() {
+class PassengerListRepository(private val api: APIInterface) : PagingSource<Int, Passenger>() {
 
     override suspend fun load(params: PagingSource.LoadParams<Int>): PagingSource.LoadResult<Int, Passenger> {
         return try {
@@ -24,8 +19,12 @@ class PassengerListRepository( private val api: APIInterface):  PagingSource<Int
                 nextKey = if (nextPageNumber < response.totalPages) nextPageNumber + 1 else null
             )
 
+        } catch (e: IOException) {
+            LoadResult.Error(e)
+        } catch (e: HttpException) {
+            LoadResult.Error(e)
         } catch (e: Exception) {
-            PagingSource.LoadResult.Error(e)
+            LoadResult.Error(e)
         }
     }
 

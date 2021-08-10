@@ -100,7 +100,11 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                     }
                 }
             } else {
-                Toast.makeText(context, "Turn on location", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    context,
+                    "Share your location to get faster, more tailored support.",
+                    Toast.LENGTH_LONG
+                ).show()
                 val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
                 startActivity(intent)
             }

@@ -33,9 +33,6 @@ class PassengersAdapter(private val itemClickListener: ItemClickListener) :
     override fun onBindViewHolder(holder: PassengersViewHolder, position: Int) {
         val item = getItem(position)
         item?.let { holder.bindPassenger(it) }
-        holder.itemView.setOnClickListener {
-            itemClickListener.itemClick(position)
-        }
     }
 
     inner class PassengersViewHolder(private val binding: ItemPassengerListBinding) :
@@ -49,7 +46,7 @@ class PassengersAdapter(private val itemClickListener: ItemClickListener) :
             txtPassengerName.text = item.name
             Glide.with(imgLogo).load(item.airline[0].logo)
 
-            imgLogo.setOnClickListener {
+            layoutItem.setOnClickListener {
                 itemClickListener.itemClick(item)
             }
         }
