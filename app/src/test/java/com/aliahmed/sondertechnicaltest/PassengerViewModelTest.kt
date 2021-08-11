@@ -1,22 +1,16 @@
 package com.aliahmed.sondertechnicaltest
 
-import android.content.Context
 import com.aliahmed.sondertechnicaltest.model.Passenger
 import com.aliahmed.sondertechnicaltest.network.APIInterface
 import com.aliahmed.sondertechnicaltest.repository.PassengerListRepository
 import com.aliahmed.sondertechnicaltest.viewmodel.PassengersViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import org.hamcrest.core.Is.`is`
 import org.junit.Assert
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
-import org.junit.Rule
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.MockitoJUnitRunner
@@ -36,8 +30,6 @@ class PassengerViewModelTest {
     lateinit var api: APIInterface
 
     lateinit var passengersViewModel: PassengersViewModel
-    private val offset: Int = 0
-    private val limit : Int = 20
 
     @Before
     fun setUp() {

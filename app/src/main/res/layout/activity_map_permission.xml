@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_map_permission" />
+        app:srcCompat="@drawable/ic_map_permission"
+        android:contentDescription="@string/logo_of_the_map" />
 
     <TextView
         android:id="@+id/textView4"
@@ -51,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Allow Access"
+        android:text="@string/allow_access"
         app:layout_constraintBottom_toTopOf="@+id/txtNotNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Not Now"
+        android:text="@string/not_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

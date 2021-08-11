@@ -12,9 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.aliahmed.sondertechnicaltest.R
 import com.aliahmed.sondertechnicaltest.databinding.ActivityMapPermissionBinding
-import com.aliahmed.sondertechnicaltest.databinding.ActivitySplashBinding
 
 class LocationPermissionActivity : AppCompatActivity() {
 
@@ -30,11 +28,11 @@ class LocationPermissionActivity : AppCompatActivity() {
     }
 
     private fun clickListener() {
-       binding.btnAllowAccess.setOnClickListener(View.OnClickListener { requestPermission() })
-       binding.txtNotNow.setOnClickListener(View.OnClickListener {
+       binding.btnAllowAccess.setOnClickListener { requestPermission() }
+        binding.txtNotNow.setOnClickListener {
             finish()
             moveTaskToBack(true)
-        })
+        }
     }
 
     private fun requestPermission() {

@@ -2,8 +2,6 @@ package com.aliahmed.sondertechnicaltest.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.aliahmed.sondertechnicaltest.R
-import com.aliahmed.sondertechnicaltest.databinding.ActivityMainBinding
 import com.aliahmed.sondertechnicaltest.databinding.ActivityPassengerDetailsBinding
 import com.aliahmed.sondertechnicaltest.model.Passenger
 import com.aliahmed.sondertechnicaltest.utils.ConstantValue

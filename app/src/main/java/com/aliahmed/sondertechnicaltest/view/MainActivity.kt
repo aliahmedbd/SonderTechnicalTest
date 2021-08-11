@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun setBottomNavigationBar() {
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val appBarConfiguration = AppBarConfiguration(
+        AppBarConfiguration(
             setOf(
                 R.id.navigation_map,
                 R.id.navigation_passenger_list

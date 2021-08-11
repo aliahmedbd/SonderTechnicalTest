@@ -25,7 +25,7 @@
             android:padding="20sp"
             android:gravity="center"
             android:textColor="@color/black"
-            android:text="It seems unstable internet connection, please enable the connectivity and try again later."/>
+            android:text="@string/it_seems_unstable_internet_connection_please_enable_the_connectivity_and_try_again_later"/>
 
     </LinearLayout>
 

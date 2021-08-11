@@ -6,14 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aliahmed.sondertechnicaltest.R
 import com.aliahmed.sondertechnicaltest.adapter.PassengersAdapter
 import com.aliahmed.sondertechnicaltest.adapter.PassengersLoadStateAdapter
-import com.aliahmed.sondertechnicaltest.databinding.FragmentMapsBinding
 import com.aliahmed.sondertechnicaltest.databinding.FragmentPassangerListBinding
 import com.aliahmed.sondertechnicaltest.model.Passenger
 import com.aliahmed.sondertechnicaltest.network.APIInterface

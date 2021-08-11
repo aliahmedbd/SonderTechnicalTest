@@ -1,8 +1,5 @@
 package com.aliahmed.sondertechnicaltest.adapter
-
-import android.R
 import android.annotation.SuppressLint
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter

@@ -8,4 +8,11 @@
     <string name="access_location">Access Location</string>
     <string name="sonder_technical_test_application_required_the_location_permission_to_collect_the_current_location_information_and_prepare_the_map">Sonder Technical Test application required the Location permission to collect the Current location information and Prepare the MAP</string>
     <string name="get_direction">Get Direction</string>
+    <string name="logo_of_the_map">Logo of the map</string>
+    <string name="allow_access">Allow Access</string>
+    <string name="not_now">Not Now</string>
+    <string name="image_of_the_airline">Image of the airline</string>
+    <string name="logo_of_the_application">Logo of the application</string>
+    <string name="it_seems_unstable_internet_connection_please_enable_the_connectivity_and_try_again_later">It seems unstable internet connection, please enable the connectivity and try again later.</string>
+    <string name="tap_to_retry">Tap to Retry</string>
 </resources>

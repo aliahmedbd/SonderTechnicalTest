@@ -1,7 +1,6 @@
 package com.aliahmed.sondertechnicaltest.view
 
 import android.Manifest
-import android.R.attr.path
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
@@ -99,7 +98,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
                 mFusedLocationClient.lastLocation.addOnCompleteListener(activity as Activity) { task ->
-                    var location: Location? = task.result
+                    val location: Location? = task.result
                     if (location == null) {
                         requestNewLocationData()
                     } else {
@@ -129,14 +128,14 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
      */
     @SuppressLint("MissingPermission")
     private fun requestNewLocationData() {
-        var mLocationRequest = LocationRequest()
+        val mLocationRequest = LocationRequest()
         mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         mLocationRequest.interval = 0
         mLocationRequest.fastestInterval = 0
         mLocationRequest.numUpdates = 1
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-        mFusedLocationClient!!.requestLocationUpdates(
+        mFusedLocationClient.requestLocationUpdates(
             mLocationRequest, mLocationCallback,
             Looper.myLooper()
         )
@@ -144,7 +143,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     private val mLocationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
-            var mLastLocation: Location = locationResult.lastLocation
+            val mLastLocation: Location = locationResult.lastLocation
             latitude = mLastLocation.latitude
             longitude = mLastLocation.longitude
             source = LatLng(latitude, longitude)
@@ -153,7 +152,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun isLocationEnabled(): Boolean {
-        var locationManager: LocationManager =
+        val locationManager: LocationManager =
             context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
             LocationManager.NETWORK_PROVIDER
