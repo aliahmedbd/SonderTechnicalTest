@@ -24,6 +24,6 @@ Here is the list of technologies are used to build this application:
         }
 ```
 6. <b>Jetpack Component - Pagging 3</b> : Why pagging is required this application, because the passenger list has a massive amount of data and If I wanted to fetch these data ata single time it will take huge amount of time. So that pagination is required, the jetpack component which is Pagging3 is one of the most used jetpack component to perform the paginated data in the `RecyclerView`. It also better with Kotlin Coroutine and Live Data. For that need to create Pagging adapter where we can detect the Success and Error state.
-7.  <b>Google Map</b>: Google Map API for Android, Places
-8.  <b>Jetpack Component - Navigation</b> : Navigation is used for generate the  `BottomNavigationView` , where I can see the clear view visibilty on the Android studio, here is the sceenshot: 
+7.  <b>Google Map</b>: Google Map API for Android, Places : Google Map is used for show the current location of the user. In this map user can add marker/point using long press. When the another marker added Get Direction will visibled. Click on get direction user can see the direction line using Google Places API and Direction API.
+8.  <b>Jetpack Component - Navigation</b> : Navigation is used for generate the  `BottomNavigationView` , where I can see the clear view visibilty on the Android studio, here is the screenshot:
   <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/navigation.png" alt="" data-canonical-     src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/navigation.png" width="300" height="300" /> 
