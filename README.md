@@ -1,4 +1,4 @@
-# SonderTechnicalTest
+# Sonder Trip - SonderTechnicalTest
 
 The repository has contains the Sonder Technical test solution, where an Android project is created and followed the steps which were mentioned in the document. I named the application is <b>Sonder Trip</b> 
 
@@ -6,7 +6,7 @@ Here is the screenshots of the application:
 
 <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Splash%20Screen.png" alt="" data-canonical-src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Splash%20Screen.png" width="200" height="400" />  <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Access%20Location.png" alt="" data-canonical-src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Access%20Location.png" width="200" height="400" />  <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Map%20Screen.png" alt="" data-canonical-src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Map%20Screen.png" width="200" height="400" />  <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Passenger%20List.png" alt="" data-canonical-src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Passenger%20List.png" width="200" height="400" />  <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Passengar%20Details.png" alt="" data-canonical-src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Passengar%20Details.png" width="200" height="400" />  <img src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Internet%20Error.png" alt="" data-canonical-src="https://github.com/aliahmedbd/SonderTechnicalTest/blob/main/Internet%20Error.png" width="200" height="400" /> 
 
-APK Link: https://drive.google.com/drive/folders/1hs5lNGBnzfylGsL5ofY8ulBW7iBUEZUU?usp=sharing
+APK and Screen Video Link: https://drive.google.com/drive/folders/1xpdpaIYAnuIzitle6UmSv9NYvyimvFGS?usp=sharing
 
 ## Application Flow
 
