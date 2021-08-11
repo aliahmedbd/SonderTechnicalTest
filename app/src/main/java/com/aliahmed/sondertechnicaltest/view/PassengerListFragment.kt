@@ -66,11 +66,8 @@ class PassengerListFragment : Fragment(), ItemClickListener {
                 }
             }
         } else {
-            Toast.makeText(
-                context,
-                "It seems unstable internet connection, please enable the connectivity and try again later.",
-                Toast.LENGTH_LONG
-            ).show()
+            binding.textinputError.visibility = View.VISIBLE
+            binding.rvPassengerList.visibility = View.GONE
         }
     }
 
