@@ -19,6 +19,7 @@ import com.aliahmed.sondertechnicaltest.model.Passenger
 import com.aliahmed.sondertechnicaltest.network.APIInterface
 import com.aliahmed.sondertechnicaltest.utils.ConstantValue
 import com.aliahmed.sondertechnicaltest.utils.ItemClickListener
+import com.aliahmed.sondertechnicaltest.utils.isOnline
 import com.aliahmed.sondertechnicaltest.viewmodel.PassengersViewModel
 import com.aliahmed.sondertechnicaltest.viewmodel.PassengersViewModelFactory
 import com.google.gson.Gson
@@ -49,19 +50,27 @@ class PassengerListFragment : Fragment(), ItemClickListener {
         val factory = PassengersViewModelFactory(APIInterface())
         viewModel = ViewModelProvider(this, factory).get(PassengersViewModel::class.java)
 
-        val passengersAdapter = PassengersAdapter(this)
-        binding.rvPassengerList.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvPassengerList.setHasFixedSize(true)
+        if (isOnline(requireContext())) {
+            val passengersAdapter = PassengersAdapter(this)
+            binding.rvPassengerList.layoutManager = LinearLayoutManager(requireContext())
+            binding.rvPassengerList.setHasFixedSize(true)
 
-        binding.rvPassengerList.adapter = passengersAdapter.withLoadStateHeaderAndFooter(
-            header = PassengersLoadStateAdapter { passengersAdapter.retry() },
-            footer = PassengersLoadStateAdapter { passengersAdapter.retry() }
-        )
+            binding.rvPassengerList.adapter = passengersAdapter.withLoadStateHeaderAndFooter(
+                header = PassengersLoadStateAdapter { passengersAdapter.retry() },
+                footer = PassengersLoadStateAdapter { passengersAdapter.retry() }
+            )
 
-        lifecycleScope.launch {
-            viewModel.passengers.collectLatest { pagedData ->
-                passengersAdapter.submitData(pagedData)
+            lifecycleScope.launch {
+                viewModel.passengers.collectLatest { pagedData ->
+                    passengersAdapter.submitData(pagedData)
+                }
             }
+        } else {
+            Toast.makeText(
+                context,
+                "It seems unstable internet connection, please enable the connectivity and try again later.",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 

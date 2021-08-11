@@ -223,7 +223,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     }
 
-
+    /**
+     * Draw the route using source and destination
+     */
     private fun drawRoute() {
         mapFragment.getMapAsync {
             googleMap = it
@@ -233,6 +235,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    /**
+     * Create map URL using source and destination using API key.
+     */
     private fun getDirectionURL(origin: LatLng, dest: LatLng, secret: String): String {
         return "https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}" +
                 "&destination=${dest.latitude},${dest.longitude}" +
@@ -277,6 +282,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    /**
+     * Decode the polyline to return the
+     */
     fun decodePolyline(encoded: String): List<LatLng> {
         val poly = ArrayList<LatLng>()
         var index = 0
